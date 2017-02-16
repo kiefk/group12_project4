@@ -39,6 +39,13 @@ background-color: orange;
        text-align: center;
 }
 
+.shippyTips img {
+    border-radius: 5px;
+    border-style: inset;
+    border-width: 3px;
+    border-color: #afacab;
+}
+
 /*
 button {
     margin: 0;
