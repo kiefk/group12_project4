@@ -8,12 +8,14 @@ public class Ship {
     private int length;
     private Coordinate start;
     private Coordinate end;
+    private boolean sunk;
 
     public Ship(String n, int l,Coordinate s, Coordinate e) {
         name = n;
         length = l;
         start = s;
         end = e;
+        sunk = false;
     }
 
 
@@ -23,6 +25,14 @@ public class Ship {
 
     }
 
+
+    public Coordinate getStart(){
+        return start;
+    }
+
+    public Coordinate getEnd(){
+        return end;
+    }
     public boolean covers(Coordinate test) {
         //horizontal
         if(start.getAcross() == end.getAcross()){
@@ -52,6 +62,17 @@ public class Ship {
         return name;
     }
 
+    public int getLength(){
+        return length;
+    }
+
+    public boolean getSunk(){
+        return sunk;
+    }
+
+    public void setSunk(boolean s){
+        sunk=s;
+    }
 
     public boolean scan(Coordinate coor) {
         if(covers(coor)){
