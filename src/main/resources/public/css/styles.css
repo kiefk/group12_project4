@@ -39,6 +39,12 @@ background-color: orange;
        text-align: center;
 }
 
+/* This class is used to hide/show elements*/
+.hidden {
+    display: none;
+}
+
+
 /*
 button {
     margin: 0;
