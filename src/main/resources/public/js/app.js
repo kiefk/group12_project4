@@ -74,7 +74,7 @@ function scan(){
    });
 
    request.done(function( currModel ) {
-     displayGameState(currModel);
+     displayGameStateS(currModel);
      gameModel = currModel;
 
    });
@@ -91,7 +91,8 @@ function log(logContents){
     console.log(logContents);
 }
 
-function displayGameState(gameModel){
+
+function displayGameStateS(gameModel){
 $( '#MyBoard td'  ).css("background-color", "blue");
 $( '#TheirBoard td'  ).css("background-color", "blue");
 
@@ -99,6 +100,45 @@ if(gameModel.scanResult){
 alert("Scan found at least one Ship")}
 else{
 alert("Scan found no Ships")}
+
+displayShip(gameModel.aircraftCarrier);
+displayShip(gameModel.battleship);
+displayShip(gameModel.cruiser);
+displayShip(gameModel.destroyer);
+displayShip(gameModel.submarine);
+
+for (var i = 0; i < gameModel.computerMisses.length; i++) {
+   $( '#TheirBoard #' + gameModel.computerMisses[i].Across + '_' + gameModel.computerMisses[i].Down ).css("background-color", "white");
+}
+
+for (var i = 0; i < gameModel.computerHits.length; i++) {
+    $('#TheirBoard #' + gameModel.computerHits[i].Across + '_' + gameModel.computerHits[i].Down).css("background-color", "red");
+}
+/*
+for (var i = 0; i < gameModel.computerSunk.length; i++) {
+    $('#TheirBoard #' + gameModel.computerSunk[i].Across + '_' + gameModel.computerSunk[i].Down).css("background-color", "black");
+}
+*/
+for (var i = 0; i < gameModel.playerMisses.length; i++) {
+   $( '#MyBoard #' + gameModel.playerMisses[i].Across + '_' + gameModel.playerMisses[i].Down ).css("background-color", "white");
+}
+
+for (var i = 0; i < gameModel.playerHits.length; i++) {
+   $( '#MyBoard #' + gameModel.playerHits[i].Across + '_' + gameModel.playerHits[i].Down ).css("background-color", "red");
+}
+
+/*for (var i = 0; i < gameModel.playerSunk.length; i++) {
+    $( '#MyBoard #' + gameModel.playerSunk[i].Across + '_' + gameModel.playerSunk[i].Down ).css("background-color", "black");
+}
+*/
+}
+
+
+
+
+function displayGameState(gameModel){
+$( '#MyBoard td'  ).css("background-color", "blue");
+$( '#TheirBoard td'  ).css("background-color", "blue");
 
 displayShip(gameModel.aircraftCarrier);
 displayShip(gameModel.battleship);
