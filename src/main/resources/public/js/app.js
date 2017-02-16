@@ -183,11 +183,16 @@ function startTurn() {
               for (i = 0; i < y.length; i++) {
                   y[i].classList.remove("hidden");
               }
-    var z = document.getElementsByClassName("shippyTips");
+    var z = document.getElementsByClassName("shippyTipsEnemy");
                    var i;
                    for (i = 0; i < z.length; i++) {
                        z[i].classList.remove("hidden");
                    }
+    var w = document.getElementsByClassName("shippyTipsPlayer");
+                             var i;
+                             for (i = 0; i < w.length; i++) {
+                                 w[i].classList.add("hidden");
+                             }
 }
 
 function endTurn() {
@@ -203,9 +208,15 @@ function endTurn() {
                       y[i].classList.remove("hidden");
                   }
 
-    var z = document.getElementsByClassName("shippyTips");
+    var z = document.getElementsByClassName("shippyTipsEnemy");
                        var i;
                        for (i = 0; i < z.length; i++) {
                            z[i].classList.add("hidden");
                        }
+
+    var w = document.getElementsByClassName("shippyTipsPlayer");
+                          var i;
+                          for (i = 0; i < w.length; i++) {
+                              w[i].classList.remove("hidden");
+                          }
 }
