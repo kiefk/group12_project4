@@ -4,8 +4,19 @@ body {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    font-family:serif;
+    color: #06c8dd;
 }
-
+#AircraftcarrierDiv{
+  position: relative;
+  top: 70px;
+  left: -80px;
+}
+button{
+  background-color: blue;
+  color: white;
+  border-radius:16px;
+}
 .gameBoard{
 /*with:100px;
 height:100px;*/
@@ -33,6 +44,7 @@ background-color: orange;
          border-radius: 10px;
          border-width: 2px;
          border-color: #795548;
+         color: black;
          background-color: rgb(245, 233, 133);
          width: 300px;
          padding: 20px;
