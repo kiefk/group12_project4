@@ -106,21 +106,29 @@ displayShip(gameModel.destroyer);
 displayShip(gameModel.submarine);
 
 for (var i = 0; i < gameModel.computerMisses.length; i++) {
-   $( '#TheirBoard #' + gameModel.computerMisses[i].Across + '_' + gameModel.computerMisses[i].Down ).css("background-color", "green");
-}
-for (var i = 0; i < gameModel.computerHits.length; i++) {
-   $( '#TheirBoard #' + gameModel.computerHits[i].Across + '_' + gameModel.computerHits[i].Down ).css("background-color", "red");
+   $( '#TheirBoard #' + gameModel.computerMisses[i].Across + '_' + gameModel.computerMisses[i].Down ).css("background-color", "white");
 }
 
-for (var i = 0; i < gameModel.playerMisses.length; i++) {
-   $( '#MyBoard #' + gameModel.playerMisses[i].Across + '_' + gameModel.playerMisses[i].Down ).css("background-color", "green");
+for (var i = 0; i < gameModel.computerHits.length; i++) {
+    $('#TheirBoard #' + gameModel.computerHits[i].Across + '_' + gameModel.computerHits[i].Down).css("background-color", "red");
 }
+/*
+for (var i = 0; i < gameModel.computerSunk.length; i++) {
+    $('#TheirBoard #' + gameModel.computerSunk[i].Across + '_' + gameModel.computerSunk[i].Down).css("background-color", "black");
+}
+*/
+for (var i = 0; i < gameModel.playerMisses.length; i++) {
+   $( '#MyBoard #' + gameModel.playerMisses[i].Across + '_' + gameModel.playerMisses[i].Down ).css("background-color", "white");
+}
+
 for (var i = 0; i < gameModel.playerHits.length; i++) {
    $( '#MyBoard #' + gameModel.playerHits[i].Across + '_' + gameModel.playerHits[i].Down ).css("background-color", "red");
 }
 
-
-
+/*for (var i = 0; i < gameModel.playerSunk.length; i++) {
+    $( '#MyBoard #' + gameModel.playerSunk[i].Across + '_' + gameModel.playerSunk[i].Down ).css("background-color", "black");
+}
+*/
 }
 
 
@@ -130,15 +138,16 @@ function displayShip(ship){
  startCoordDown = ship.start.Down;
  endCoordAcross = ship.end.Across;
  endCoordDown = ship.end.Down;
+ sunk = ship.sunk;
 // console.log(startCoordAcross);
  if(startCoordAcross > 0){
     if(startCoordAcross == endCoordAcross){
         for (i = startCoordDown; i <= endCoordDown; i++) {
-            $( '#MyBoard #'+startCoordAcross+'_'+i  ).css("background-color", "yellow");
+            $( '#MyBoard #'+startCoordAcross+'_'+i  ).css("background-color", "grey");
         }
     } else {
         for (i = startCoordAcross; i <= endCoordAcross; i++) {
-            $( '#MyBoard #'+i+'_'+startCoordDown  ).css("background-color", "yellow");
+            $( '#MyBoard #'+i+'_'+startCoordDown  ).css("background-color", "grey");
         }
     }
  }
