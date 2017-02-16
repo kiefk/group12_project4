@@ -25,6 +25,9 @@ public class BattleshipModel {
     private ArrayList<Coordinate> playerMisses;
     ArrayList<Coordinate> computerHits;
     private ArrayList<Coordinate> computerMisses;
+    ArrayList<Coordinate> playerSunk;
+    ArrayList<Coordinate> computerSunk;
+
 
     boolean scanResult = false;
 
@@ -35,6 +38,8 @@ public class BattleshipModel {
         playerMisses= new ArrayList<>();
         computerHits = new ArrayList<>();
         computerMisses= new ArrayList<>();
+        playerSunk= new ArrayList<>();
+        computerSunk= new ArrayList<>();
     }
 
 
@@ -90,14 +95,19 @@ public class BattleshipModel {
         Coordinate coor = new Coordinate(row,col);
         if(computer_aircraftCarrier.covers(coor)){
             computerHits.add(coor);
+            checkSunk(computer_aircraftCarrier,computerHits, computerSunk);
         }else if (computer_battleship.covers(coor)){
             computerHits.add(coor);
+            checkSunk(computer_battleship,computerHits, computerSunk);
         }else if (computer_cruiser.covers(coor)){
             computerHits.add(coor);
+            checkSunk(computer_cruiser,computerHits, computerSunk);
         }else if (computer_destroyer.covers(coor)){
             computerHits.add(coor);
+            checkSunk(computer_destroyer,computerHits,computerSunk);
         }else if (computer_submarine.covers(coor)){
             computerHits.add(coor);
+            checkSunk(computer_submarine,computerHits, computerSunk);
         } else {
             computerMisses.add(coor);
         }
@@ -121,19 +131,44 @@ public class BattleshipModel {
 
         if(aircraftCarrier.covers(coor)){
             playerHits.add(coor);
+            checkSunk(aircraftCarrier, playerHits, playerSunk);
         }else if (battleship.covers(coor)){
             playerHits.add(coor);
+            checkSunk(battleship, playerHits, playerSunk);
         }else if (cruiser.covers(coor)){
             playerHits.add(coor);
+            checkSunk(cruiser, playerHits, playerSunk);
         }else if (destroyer.covers(coor)){
             playerHits.add(coor);
+            checkSunk(destroyer, playerHits,playerSunk);
         }else if (submarine.covers(coor)){
             playerHits.add(coor);
+            checkSunk(submarine, playerHits, playerSunk);
         } else {
             playerMisses.add(coor);
         }
     }
 
+    public void checkSunk(Ship s, ArrayList<Coordinate> hits, ArrayList<Coordinate> sunk){
+        int hitCount=0;
+        for(int i=0; i<hits.size(); i++){
+            if(s.covers(hits.get(i))){
+                hitCount++;
+            }
+        }
+
+        if(s.getLength()==hitCount){
+            s.setSunk(true);
+        }
+
+        if(s.getSunk()==true){
+            for(int i=0; i<hits.size(); i++){
+                if(s.covers(hits.get(i))){
+                    sunk.add(hits.get(i));
+                }
+            }
+        }
+    }
 
     public void scan(int rowInt, int colInt) {
         Coordinate coor = new Coordinate(rowInt,colInt);
