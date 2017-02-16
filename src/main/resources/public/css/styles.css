@@ -24,6 +24,12 @@ table, th, td {
 background-color: orange;
 }
 
+/* This class is used to hide/show elements*/
+.hidden {
+    display: none;
+}
+
+
 /*
 button {
     margin: 0;

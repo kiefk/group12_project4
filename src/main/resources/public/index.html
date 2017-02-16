@@ -11,8 +11,8 @@
 
 <body>
 
-<h1>Place Ships</h1>
-<div id="AircraftcarrierDiv">
+<h1 class = "Placement">Place Ships</h1>
+<div class="Placement" id="AircraftcarrierDiv">
     Ship:
     <select name="shipSelec" id="shipSelec">
         <option value="aircraftCarrier">Aircraft Carrier</option>
@@ -60,8 +60,8 @@
 
 <section id="todoapp" ic-target="this">
     <!--#parse("/velocity/todoList.vm")-->
-    <h1>Yours</h1>
-    <div id="MyBoard" class="gameBoard">
+    <h1 class = "player">Your Board</h1>
+    <div id="MyBoard" class="gameBoard player">
         <table>
             <tr id="My_Row_1">
                 <td id="1_1"  class="{{1_1}}"></td>
@@ -185,9 +185,23 @@
             </tr>
         </table>
     </div>
-    <BR><BR><BR>
-    <H1>Theirs</H1>
-    <div id="TheirBoard" class="gameBoard">
+
+    <BR>
+
+    <!-- This button should end the ship placement stage -->
+    <div class="Placement">
+        <button type="button" onclick="endPlacement()">Done Placing ships</button>
+    </div>
+
+    <!-- This button should begin action stage of player turn -->
+    <div class="player hidden">
+        <button type="button" onclick="startTurn()">Next</button>
+    </div>
+
+
+
+    <H1 class = "enemy hidden">Enemy Board</H1>
+    <div id="TheirBoard" class="gameBoard enemy hidden">
         <table>
             <tr id="My_Row_1">
                 <td id="1_1"  class="{{1_1}}"></td>
@@ -312,8 +326,8 @@
         </table>
     </div>
 
-    <h1>Fire:</h1>
-    <div id="FireDiv">
+    <h1 class = "enemy hidden">Fire:</h1>
+    <div id="FireDiv" class = "enemy hidden">
         Row:
         <select name="rowFire" id="rowFire">
             <option value="1">1</option>
@@ -343,8 +357,8 @@
         <button type="button" onclick="fire()">Fire</button>
     </div>
 
-    <h1>Scan:</h1>
-    <div id="ScanDiv">
+    <h1 class = "enemy hidden" >Scan:</h1>
+    <div id="ScanDiv" class = "enemy hidden" >
         Row:
         <select name="rowFire" id="rowScan">
             <option value="1">1</option>

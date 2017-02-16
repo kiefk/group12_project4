@@ -58,7 +58,7 @@ function fire(){
    request.fail(function( jqXHR, textStatus ) {
      alert( "Request failed: " + textStatus );
    });
-
+    endTurn();
 }
 
 function scan(){
@@ -83,6 +83,7 @@ function scan(){
      alert( "Request failed: " + textStatus );
    });
 
+    endTurn();
 }
 
 
@@ -142,7 +143,48 @@ function displayShip(ship){
         }
     }
  }
+}
 
 
+/* This function signals the end of the ship placement stage.
+ * It should hide the place ship buttons. */
+function endPlacement() {
+    console.log("End ship placement");
+    var x = document.getElementsByClassName("Placement");
+     var i;
+     for (i = 0; i < x.length; i++) {
+         x[i].classList.add("hidden");
+     }
 
+     var y = document.getElementsByClassName("player");
+          var i;
+          for (i = 0; i < y.length; i++) {
+              y[i].classList.remove("hidden");
+          }
+}
+
+function startTurn() {
+    var x = document.getElementsByClassName("player");
+         var i;
+         for (i = 0; i < x.length; i++) {
+             x[i].classList.add("hidden");
+         }
+    var y = document.getElementsByClassName("enemy");
+              var i;
+              for (i = 0; i < y.length; i++) {
+                  y[i].classList.remove("hidden");
+              }
+}
+
+function endTurn() {
+    var x = document.getElementsByClassName("enemy");
+             var i;
+             for (i = 0; i < x.length; i++) {
+                 x[i].classList.add("hidden");
+             }
+        var y = document.getElementsByClassName("player");
+                  var i;
+                  for (i = 0; i < y.length; i++) {
+                      y[i].classList.remove("hidden");
+                  }
 }
