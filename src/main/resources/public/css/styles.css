@@ -36,7 +36,7 @@ table, th, td {
 #MyBoard .ship{
 background-color: orange;
 }
-.shippyTips{
+.shippyTipsEnemy{
          float: right;
          margin-left: 20px;
          margin-top: 80px;
@@ -52,7 +52,29 @@ background-color: orange;
 }
 
 
-.shippyTips img {
+.shippyTipsEnemy img {
+    border-radius: 5px;
+    border-style: inset;
+    border-width: 3px;
+    border-color: #afacab;
+}
+
+.shippyTipsPlayer{
+         float: right;
+         margin-left: 20px;
+         margin-top: -465px;
+         border-style: outset;
+         border-radius: 10px;
+         border-width: 2px;
+         border-color: #795548;
+         background-color: rgb(245, 233, 133);
+         width: 300px;
+         padding: 20px;
+         text-align: center;
+}
+
+
+.shippyTipsPlayer img {
     border-radius: 5px;
     border-style: inset;
     border-width: 3px;
