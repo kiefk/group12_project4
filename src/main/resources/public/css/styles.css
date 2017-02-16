@@ -2,6 +2,8 @@ html,
 body {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .gameBoard{
@@ -22,6 +24,19 @@ table, th, td {
 
 #MyBoard .ship{
 background-color: orange;
+}
+.shippyTips{
+       float: right;
+       margin-left: 600px;
+       margin-top: -465px;
+       border-style: outset;
+       border-radius: 10px;
+       border-width: 2px;
+       border-color: #795548;
+       background-color: rgb(245, 233, 133);
+       width: 300px;
+       padding: 20px;
+       text-align: center;
 }
 
 /* This class is used to hide/show elements*/
