@@ -39,6 +39,7 @@ background-color: orange;
        text-align: center;
 }
 
+<<<<<<< HEAD
 .shippyTips img {
     border-radius: 5px;
     border-style: inset;
@@ -46,6 +47,14 @@ background-color: orange;
     border-color: #afacab;
 }
 
+=======
+/* This class is used to hide/show elements*/
+.hidden {
+    display: none;
+}
+
+
+>>>>>>> 2910ded585609418efca466a4806d989d530ea93
 /*
 button {
     margin: 0;
