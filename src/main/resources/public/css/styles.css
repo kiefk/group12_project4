@@ -26,17 +26,17 @@ table, th, td {
 background-color: orange;
 }
 .shippyTips{
-       float: right;
-       margin-left: 600px;
-       margin-top: -465px;
-       border-style: outset;
-       border-radius: 10px;
-       border-width: 2px;
-       border-color: #795548;
-       background-color: rgb(245, 233, 133);
-       width: 300px;
-       padding: 20px;
-       text-align: center;
+         float: right;
+         margin-left: 20px;
+         margin-top: 80px;
+         border-style: outset;
+         border-radius: 10px;
+         border-width: 2px;
+         border-color: #795548;
+         background-color: rgb(245, 233, 133);
+         width: 300px;
+         padding: 20px;
+         text-align: center;
 }
 
 
@@ -55,3 +55,6 @@ background-color: orange;
 
 
 
+.gameBoard{
+    width: 900px
+}

@@ -174,6 +174,11 @@ function startTurn() {
               for (i = 0; i < y.length; i++) {
                   y[i].classList.remove("hidden");
               }
+    var z = document.getElementsByClassName("shippyTips");
+                   var i;
+                   for (i = 0; i < z.length; i++) {
+                       z[i].classList.remove("hidden");
+                   }
 }
 
 function endTurn() {
@@ -182,9 +187,16 @@ function endTurn() {
              for (i = 0; i < x.length; i++) {
                  x[i].classList.add("hidden");
              }
-        var y = document.getElementsByClassName("player");
+
+    var y = document.getElementsByClassName("player");
                   var i;
                   for (i = 0; i < y.length; i++) {
                       y[i].classList.remove("hidden");
                   }
+
+    var z = document.getElementsByClassName("shippyTips");
+                       var i;
+                       for (i = 0; i < z.length; i++) {
+                           z[i].classList.add("hidden");
+                       }
 }
