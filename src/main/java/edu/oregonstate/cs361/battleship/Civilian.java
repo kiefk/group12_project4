@@ -7,7 +7,9 @@ import java.util.ArrayList;
  */
 
 
+
 public class Civilian extends Ship {
+
 
     public Civilian(String n, int l, Coordinate s, Coordinate e) {
         super();
@@ -17,6 +19,8 @@ public class Civilian extends Ship {
         setEnd(e);
         setSunk(false);
     }
+}
+
 
 
     public void isSunk(ArrayList<Coordinate> hits) {
@@ -30,3 +34,4 @@ public class Civilian extends Ship {
 
     }
 }
+

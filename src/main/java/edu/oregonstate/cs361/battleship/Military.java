@@ -6,9 +6,7 @@ package edu.oregonstate.cs361.battleship;
 
 
 
-public class Military extends Ship {
-
-
+public class Military extends Ship{
     public Military(String n, int l, Coordinate s, Coordinate e) {
         super();
         setName(n);
@@ -17,6 +15,8 @@ public class Military extends Ship {
         setEnd(e);
         setSunk(false);
     }
+}
+
 
     public boolean scan(Coordinate coor) {
         if(getName()=="Battleship"){
@@ -49,3 +49,4 @@ public class Military extends Ship {
         return false;
     }
 }
+
