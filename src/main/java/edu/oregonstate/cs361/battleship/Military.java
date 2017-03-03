@@ -44,4 +44,3 @@ public class Military extends Ship {
         return false;
     }
 }
-

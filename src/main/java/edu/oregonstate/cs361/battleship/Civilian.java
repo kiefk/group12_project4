@@ -25,4 +25,3 @@ public class Civilian extends Ship {
         }
     }
 }
-
