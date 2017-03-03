@@ -13,6 +13,10 @@ public class Ship {
     private Coordinate end;
     private boolean sunk;
 
+    public Ship() {
+
+    }
+
     public Ship(String n, int l,Coordinate s, Coordinate e) {
         name = n;
         length = l;
@@ -22,27 +26,60 @@ public class Ship {
     }
 
 
+    public void setName(String n){
+        name = n;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setLength(int l){
+        length = l;
+    }
+
+    public int getLength(){
+        return length;
+    }
+
+    public void setStart(Coordinate s){
+        start = s;
+    }
+
+    public Coordinate getStart(){
+        return start;
+    }
+
+    public void setEnd(Coordinate e){
+        end = e;
+    }
+
+    public Coordinate getEnd(){
+        return end;
+    }
+
+    public void setSunk(boolean s){
+        sunk = s;
+    }
+
+    public boolean getSunk(){
+        return sunk;
+    }
+
+
     public void setLocation(Coordinate s, Coordinate e) {
         start = s;
         end = e;
 
     }
 
-
-    public Coordinate getStart(){
-        return start;
-    }
-
-    public Coordinate getEnd(){
-        return end;
-    }
     public boolean covers(Coordinate test) {
         //horizontal
         if(start.getAcross() == end.getAcross()){
             if(test.getAcross() == start.getAcross()){
                 if((test.getDown() >= start.getDown()) &&
-                (test.getDown() <= end.getDown()))
-                return true;
+                        (test.getDown() <= end.getDown()))
+                    return true;
             } else {
                 return false;
             }
@@ -61,21 +98,6 @@ public class Ship {
         return false;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getLength(){
-        return length;
-    }
-
-    public boolean getSunk(){
-        return sunk;
-    }
-
-    public void setSunk(boolean s){
-        sunk=s;
-    }
 
     public void isSunk(ArrayList<Coordinate> hits) {
         int hitCount = 0;
