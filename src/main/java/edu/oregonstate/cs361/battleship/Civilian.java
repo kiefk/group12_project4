@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Civilian extends Ship {
 
     public Civilian(String n, int l, Coordinate s, Coordinate e) {
-                 super();
+        super();
                 setName(n);
                 setLength(l);
                 setStart(s);

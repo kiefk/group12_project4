@@ -180,7 +180,6 @@ function displayShip(ship){
  endCoordAcross = ship.end.Across;
  endCoordDown = ship.end.Down;
  sunk = ship.sunk;
-// console.log(startCoordAcross);
  if(startCoordAcross > 0){
     if(startCoordAcross == endCoordAcross){
         for (i = startCoordDown; i <= endCoordDown; i++) {
