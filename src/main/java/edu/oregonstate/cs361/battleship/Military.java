@@ -8,6 +8,14 @@ package edu.oregonstate.cs361.battleship;
 
 public class Military extends Ship {
 
+    public Military(String n, int l, Coordinate s, Coordinate e) {
+        super();
+        setName(n);
+        setLength(l);
+        setStart(s);
+        setEnd(e);
+        setSunk(false);
+    }
 }
 
  **/
