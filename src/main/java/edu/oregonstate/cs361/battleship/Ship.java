@@ -10,12 +10,49 @@ public class Ship {
     private Coordinate end;
     private boolean sunk;
 
-    public Ship(String n, int l,Coordinate s, Coordinate e) {
+    public Ship() {
+
+    }
+
+
+    public void setName(String n){
         name = n;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setLength(int l){
         length = l;
+    }
+
+    public int getLength(){
+        return length;
+    }
+
+    public void setStart(Coordinate s){
         start = s;
+    }
+
+    public Coordinate getStart(){
+        return start;
+    }
+
+    public void setEnd(Coordinate e){
         end = e;
-        sunk = false;
+    }
+
+    public Coordinate getEnd(){
+        return end;
+    }
+
+    public void setSunk(boolean s){
+        sunk = s;
+    }
+
+    public boolean getSunk(){
+        return sunk;
     }
 
 
@@ -25,14 +62,6 @@ public class Ship {
 
     }
 
-
-    public Coordinate getStart(){
-        return start;
-    }
-
-    public Coordinate getEnd(){
-        return end;
-    }
     public boolean covers(Coordinate test) {
         //horizontal
         if(start.getAcross() == end.getAcross()){
@@ -58,21 +87,6 @@ public class Ship {
         return false;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getLength(){
-        return length;
-    }
-
-    public boolean getSunk(){
-        return sunk;
-    }
-
-    public void setSunk(boolean s){
-        sunk=s;
-    }
 
     public boolean scan(Coordinate coor) {
         if(covers(coor)){
