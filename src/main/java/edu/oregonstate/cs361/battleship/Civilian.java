@@ -9,19 +9,22 @@ import java.util.ArrayList;
 public class Civilian extends Ship {
 
     public Civilian(String n, int l, Coordinate s, Coordinate e) {
-        super();
-        setName(n);
-        setLength(l);
-        setStart(s);
-        setEnd(e);
-        setSunk(false);
-    }
-    public void isSunk(ArrayList<Coordinate> hits) {
-        for(int i=0; i<hits.size(); i++){
-            if(covers(hits.get(i))){
-                setSunk(true);
-                return;
-            }
-        }
-    }
+            super();
+                setName(n);
+                setLength(l);
+                setStart(s);
+                setEnd(e);
+                setSunk(false);
+       }
+
+             public void isSunk(ArrayList<Coordinate> hits) {
+                    for(int i=0; i<hits.size(); i++){
+                        if(covers(hits.get(i))){
+                                setSunk(true);
+                                return;
+                            }
+                    }
+
+
+           }
 }
