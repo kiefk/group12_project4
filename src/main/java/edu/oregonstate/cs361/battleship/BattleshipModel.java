@@ -12,14 +12,14 @@ public class BattleshipModel {
     private Military aircraftCarrier = new Military("AircraftCarrier",5, new Coordinate(0,0),new Coordinate(0,0));
     private Military battleship = new Military("Battleship",4, new Coordinate(0,0),new Coordinate(0,0));
     private Military submarine = new Military("Submarine",2, new Coordinate(0,0),new Coordinate(0,0));
-    private Civilian Dinghy = new Civilian("Dinghy",3, new Coordinate(0,0),new Coordinate(0,0));
-    private Civilian Clipper = new Civilian("Clipper",2, new Coordinate(0,0),new Coordinate(0,0));
+    private Civilian Dinghy = new Civilian("Dinghy",1, new Coordinate(0,0),new Coordinate(0,0));
+    private Civilian Clipper = new Civilian("Clipper",3, new Coordinate(0,0),new Coordinate(0,0));
     
     private Military computer_aircraftCarrier = new Military("Computer_AircraftCarrier",5, new Coordinate(2,2),new Coordinate(2,7));
     private Military computer_battleship = new Military("Computer_Battleship",4, new Coordinate(2,8),new Coordinate(6,8));
     private Military computer_submarine = new Military("Computer_Submarine",2, new Coordinate(9,6),new Coordinate(9,8));
-    private Civilian computer_Dinghy = new Civilian("Computer_Dinghy",3, new Coordinate(4,1),new Coordinate(4,4));
-    private Civilian computer_Clipper = new Civilian("Computer_Clipper",2, new Coordinate(7,3),new Coordinate(7,5));
+    private Civilian computer_Dinghy = new Civilian("Computer_Dinghy",1, new Coordinate(4,1),new Coordinate(4,4));
+    private Civilian computer_Clipper = new Civilian("Computer_Clipper",3, new Coordinate(7,3),new Coordinate(7,5));
 
 
     ArrayList<Coordinate> playerHits;
@@ -49,9 +49,9 @@ public class BattleshipModel {
             return aircraftCarrier;
         } if(shipName.equalsIgnoreCase("battleship")) {
             return battleship;
-        } if(shipName.equalsIgnoreCase("Dinghy")) {
+        } if(shipName.equalsIgnoreCase("dinghy")) {
         return Dinghy;
-        } if(shipName.equalsIgnoreCase("Clipper")) {
+        } if(shipName.equalsIgnoreCase("clipper")) {
             return Clipper;
         }if(shipName.equalsIgnoreCase("submarine")) {
             return submarine;
