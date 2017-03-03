@@ -57,6 +57,19 @@ class ShipTest {
         s.setSunk(true);
         assertEquals(true,s.getSunk());
 }
-
+@Test
+    public void testGetterSetter(){
+        Ship s = new Ship("AircraftCarrier",5, new Coordinate(5,2),new Coordinate(5,7));
+        s.setName("this is a name");
+        assertEquals("this is a name",s.getName());
+        s.setLength(42);
+        assertEquals(42,s.getLength());
+        Coordinate c = new Coordinate(17,44);
+        Coordinate d = new Coordinate(56,1);
+        s.setStart(c);
+        s.setEnd(d);
+        assertEquals(c,s.getStart());
+        assertEquals(d,s.getEnd());
+}
 
 }
