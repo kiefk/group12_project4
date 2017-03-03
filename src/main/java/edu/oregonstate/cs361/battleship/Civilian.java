@@ -14,3 +14,4 @@ public class Civilian extends Ship {
         setEnd(e);
         setSunk(false);
     }
+}
