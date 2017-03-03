@@ -46,6 +46,14 @@ class MilitaryTest {
         assertEquals(true,s.scan(new Coordinate(6,2)));
         assertEquals(true,s.scan(new Coordinate(5,1)));
         assertEquals(true,s.scan(new Coordinate(5,3)));
+        s.setName("Battleship");
+        assertEquals(false,s.scan(new Coordinate(5,2)));
+        s.setName("Computer_Battleship");
+        assertEquals(false,s.scan(new Coordinate(5,2)));
+        s.setName("Submarine");
+        assertEquals(false,s.scan(new Coordinate(5,2)));
+        s.setName("Computer_Submarine");
+        assertEquals(false,s.scan(new Coordinate(5,2)));
     }
 
     @Test
