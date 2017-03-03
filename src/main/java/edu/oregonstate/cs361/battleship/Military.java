@@ -16,3 +16,4 @@ public class Military extends Ship {
         setSunk(false);
     }
 }
+
