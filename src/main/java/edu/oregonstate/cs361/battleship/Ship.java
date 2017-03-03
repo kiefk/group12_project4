@@ -14,6 +14,14 @@ public class Ship {
 
     }
 
+    public Ship(String n, int l,Coordinate s, Coordinate e) {
+        name = n;
+        length = l;
+        start = s;
+        end = e;
+        sunk = false;
+    }
+
 
     public void setName(String n){
         name = n;
