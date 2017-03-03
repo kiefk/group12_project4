@@ -150,16 +150,8 @@ public class BattleshipModel {
     }
 
     public void checkSunk(Ship s, ArrayList<Coordinate> hits, ArrayList<Coordinate> sunk){
-        int hitCount=0;
-        for(int i=0; i<hits.size(); i++){
-            if(s.covers(hits.get(i))){
-                hitCount++;
-            }
-        }
 
-        if(s.getLength()==hitCount){
-            s.setSunk(true);
-        }
+       s.isSunk(hits);
 
         if(s.getSunk()==true){
             for(int i=0; i<hits.size(); i++){
