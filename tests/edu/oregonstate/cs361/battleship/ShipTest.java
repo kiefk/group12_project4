@@ -51,7 +51,12 @@ class ShipTest {
         assertEquals(true,s.scan(new Coordinate(5,3)));
     }
 
-
+@Test
+    public void testSunk(){
+        Ship s = new Ship("AircraftCarrier",5, new Coordinate(5,2),new Coordinate(5,7));
+        s.setSunk(true);
+        assertEquals(true,s.getSunk());
+}
 
 
 }
