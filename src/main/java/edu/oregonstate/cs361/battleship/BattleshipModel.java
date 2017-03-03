@@ -69,9 +69,9 @@ public class BattleshipModel {
             } if(shipName.equalsIgnoreCase("battleship")) {
                 this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint,colInt+4));
             } if(shipName.equalsIgnoreCase("Dinghy")) {
-                this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint,colInt+3));
+                this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint,colInt+1));
             } if(shipName.equalsIgnoreCase("Clipper")) {
-                this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint,colInt+2));
+                this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint,colInt+3));
             }if(shipName.equalsIgnoreCase("submarine")) {
                 this.getShip(shipName).setLocation(new Coordinate(rowint, colInt), new Coordinate(rowint, colInt + 2));
             }
@@ -82,9 +82,9 @@ public class BattleshipModel {
                 } if(shipName.equalsIgnoreCase("battleship")) {
                     this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint+4,colInt));
                 } if(shipName.equalsIgnoreCase("Dinghy")) {
-                    this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint+3,colInt));
+                    this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint+1,colInt));
                 } if(shipName.equalsIgnoreCase("Clipper")) {
-                    this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint+2,colInt));
+                    this.getShip(shipName).setLocation(new Coordinate(rowint,colInt),new Coordinate(rowint+3,colInt));
                 }if(shipName.equalsIgnoreCase("submarine")) {
                     this.getShip(shipName).setLocation(new Coordinate(rowint, colInt), new Coordinate(rowint + 2, colInt));
                 }
