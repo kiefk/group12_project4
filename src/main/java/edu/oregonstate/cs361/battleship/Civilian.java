@@ -16,10 +16,6 @@ public class Civilian extends Ship {
         setEnd(e);
         setSunk(false);
     }
-}
-
-
-
     public void isSunk(ArrayList<Coordinate> hits) {
         for(int i=0; i<hits.size(); i++){
             if(covers(hits.get(i))){
@@ -27,8 +23,6 @@ public class Civilian extends Ship {
                 return;
             }
         }
-
-
     }
 }
 
