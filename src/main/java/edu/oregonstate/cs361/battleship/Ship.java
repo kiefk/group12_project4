@@ -78,8 +78,8 @@ public class Ship {
         if(start.getAcross() == end.getAcross()){
             if(test.getAcross() == start.getAcross()){
                 if((test.getDown() >= start.getDown()) &&
-                (test.getDown() <= end.getDown()))
-                return true;
+                        (test.getDown() <= end.getDown()))
+                    return true;
             } else {
                 return false;
             }
