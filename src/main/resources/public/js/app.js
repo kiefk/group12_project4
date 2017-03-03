@@ -103,8 +103,8 @@ alert("Scan found no Ships")}
 
 displayShip(gameModel.aircraftCarrier);
 displayShip(gameModel.battleship);
-displayShip(gameModel.cruiser);
-displayShip(gameModel.destroyer);
+displayShip(gameModel.Clipper);
+displayShip(gameModel.Dinghy);
 displayShip(gameModel.submarine);
 
 for (var i = 0; i < gameModel.computerMisses.length; i++) {
@@ -142,8 +142,8 @@ $( '#TheirBoard td'  ).css("background-color", "blue");
 
 displayShip(gameModel.aircraftCarrier);
 displayShip(gameModel.battleship);
-displayShip(gameModel.cruiser);
-displayShip(gameModel.destroyer);
+displayShip(gameModel.Clipper);
+displayShip(gameModel.Dinghy);
 displayShip(gameModel.submarine);
 
 for (var i = 0; i < gameModel.computerMisses.length; i++) {
