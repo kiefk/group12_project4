@@ -3,6 +3,9 @@ package edu.oregonstate.cs361.battleship;
 /**
  * Created by michaelhilton on 1/5/17.
  */
+
+import java.util.ArrayList;
+
 public class Ship {
     private String name;
     private int length;
@@ -94,6 +97,22 @@ public class Ship {
         }
         return false;
     }
+
+
+    public void isSunk(ArrayList<Coordinate> hits) {
+        int hitCount = 0;
+        for(int i=0; i<hits.size(); i++){
+            if(covers(hits.get(i))){
+                hitCount++;
+            }
+        }
+
+        if(getLength()==hitCount){
+            setSunk(true);
+        }
+
+    }
+
 
 
     public boolean scan(Coordinate coor) {
