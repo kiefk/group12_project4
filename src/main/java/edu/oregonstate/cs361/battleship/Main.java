@@ -2,7 +2,6 @@ package edu.oregonstate.cs361.battleship;
 
 import com.google.gson.Gson;
 import spark.Request;
-
 import java.io.UnsupportedEncodingException;
 
 import static spark.Spark.get;

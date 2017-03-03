@@ -1,8 +1,23 @@
 package edu.oregonstate.cs361.battleship;
 
+import com.google.gson.Gson;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import spark.Spark;
+import spark.utils.IOUtils;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static spark.Spark.awaitInitialization;
+
+
 
 /**
  * Created by michaelhilton on 2/7/17.
@@ -51,7 +66,25 @@ class ShipTest {
         assertEquals(true,s.scan(new Coordinate(5,3)));
     }
 
-
-
+@Test
+    public void testSunk(){
+        Ship s = new Ship("AircraftCarrier",5, new Coordinate(5,2),new Coordinate(5,7));
+        s.setSunk(true);
+        assertEquals(true,s.getSunk());
+}
+@Test
+    public void testGetterSetter(){
+        Ship s = new Ship("AircraftCarrier",5, new Coordinate(5,2),new Coordinate(5,7));
+        s.setName("this is a name");
+        assertEquals("this is a name",s.getName());
+        s.setLength(42);
+        assertEquals(42,s.getLength());
+        Coordinate c = new Coordinate(17,44);
+        Coordinate d = new Coordinate(56,1);
+        s.setStart(c);
+        s.setEnd(d);
+        assertEquals(c,s.getStart());
+        assertEquals(d,s.getEnd());
+}
 
 }
