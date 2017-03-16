@@ -4,6 +4,14 @@ package edu.oregonstate.cs361.battleship;
  * Created by Keana on 3/15/2017.
  */
 public class Mode {
+
+    //variables?
+
+    public Mode(){
+
+    }
+
+
     /*
         This is a parent class for easy mode and hard mode. These empty functions will be overridden
         by a function with the same name in either the easy or hard mode class.
