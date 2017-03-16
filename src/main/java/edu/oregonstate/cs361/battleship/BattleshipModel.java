@@ -7,20 +7,24 @@ import java.util.Random;
  * Created by michaelhilton on 1/4/17.
  */
 public class BattleshipModel {
-
+    /*
+    These next ten lines create and construct the ships for the player and the computer.
+     */
     private Military aircraftCarrier = new Military("AircraftCarrier",5, new Coordinate(0,0),new Coordinate(0,0));
     private Military battleship = new Military("Battleship",4, new Coordinate(0,0),new Coordinate(0,0));
     private Military submarine = new Military("Submarine",3, new Coordinate(0,0),new Coordinate(0,0));
     private Civilian Dinghy = new Civilian("Dinghy",1, new Coordinate(0,0),new Coordinate(0,0));
     private Civilian Clipper = new Civilian("Clipper",3, new Coordinate(0,0),new Coordinate(0,0));
     
-    private Military computer_aircraftCarrier = new Military("Computer_AircraftCarrier",5, new Coordinate(2,2),new Coordinate(2,7));
-    private Military computer_battleship = new Military("Computer_Battleship",4, new Coordinate(2,8),new Coordinate(6,8));
-    private Military computer_submarine = new Military("Computer_Submarine",3, new Coordinate(9,6),new Coordinate(9,8));
-    private Civilian computer_Dinghy = new Civilian("Computer_Dinghy",1, new Coordinate(4,1),new Coordinate(4,4));
-    private Civilian computer_Clipper = new Civilian("Computer_Clipper",3, new Coordinate(7,3),new Coordinate(7,5));
+    private Military computer_aircraftCarrier = new Military("Computer_AircraftCarrier",5, new Coordinate(0,0),new Coordinate(0,0));
+    private Military computer_battleship = new Military("Computer_Battleship",4, new Coordinate(0,0),new Coordinate(0,0));
+    private Military computer_submarine = new Military("Computer_Submarine",3, new Coordinate(0,0),new Coordinate(0,0));
+    private Civilian computer_Dinghy = new Civilian("Computer_Dinghy",1, new Coordinate(0,0),new Coordinate(0,0));
+    private Civilian computer_Clipper = new Civilian("Computer_Clipper",3, new Coordinate(0,0),new Coordinate(0,0));
 
-
+    /*
+    Other variables the battleship model uses.
+     */
     ArrayList<Coordinate> playerHits;
     private ArrayList<Coordinate> playerMisses;
     ArrayList<Coordinate> computerHits;
@@ -33,7 +37,7 @@ public class BattleshipModel {
 
 
 
-    public BattleshipModel() {
+    public BattleshipModel() { //battleship constructor creates dynamic arrays for it's variables
         playerHits = new ArrayList<>();
         playerMisses= new ArrayList<>();
         computerHits = new ArrayList<>();
@@ -42,7 +46,11 @@ public class BattleshipModel {
         computerSunk= new ArrayList<>();
     }
 
-
+    /*
+    Function: getShip
+        If a ship name is called by the view this function returns the ship name
+        with the variable naming system used in this code.
+     */
     public Ship getShip(String shipName) {
         if (shipName.equalsIgnoreCase("aircraftcarrier")) {
             return aircraftCarrier;
