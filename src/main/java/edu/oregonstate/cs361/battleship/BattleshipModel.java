@@ -511,7 +511,7 @@ public class BattleshipModel {
                 //tries to fire outside of the grid.
             }
 
-            //playerShot(coor);
+            playerShot(coor);
         }
 
 
