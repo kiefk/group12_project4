@@ -6,12 +6,16 @@ import java.util.Random;
  * Created by Keana on 3/15/2017.
  */
 public class Hard extends Mode {
+
     boolean hit;
     int count;//tracks directions checked around a hit
     Coordinate lastHit;
     Coordinate hitPrime;
 
 
+    public Hard(){
+
+    }
     private void _fire(BattleshipModel bs, Coordinate shot){//helper function for fire
         int result;
         result = bs.playerShot(shot);//shoots at the player
@@ -84,5 +88,6 @@ public class Hard extends Mode {
             _fire(bs,shot);//FIRE
         }
     }
+
 
 }
