@@ -50,6 +50,9 @@ function placeShip() {
      dataType: "json"
    });
 
+   var x = document.getElementById("shipSelec");
+       x.remove(x.selectedIndex);
+
    request.done(function( currModel ) {
      displayGameState(currModel);
      gameModel = currModel;
