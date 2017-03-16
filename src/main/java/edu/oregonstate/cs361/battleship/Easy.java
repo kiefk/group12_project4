@@ -26,7 +26,7 @@ public class Easy extends Mode {
 
     }
 
-    public void fire(playerShot(Coordinate coor)){
+    public void fire(){
 
 
         Coordinate coor = new Coordinate(Row,Col); //set Coordinate to row and column held by the Easy class
@@ -36,7 +36,8 @@ public class Easy extends Mode {
             Col++; //Col should never exceed 10 because it should reach a win condition before the program
                         //tries to fire outside of the grid.
         }
-        playerShot(coor);
+
+        //playerShot(coor);
     }
 
 }
