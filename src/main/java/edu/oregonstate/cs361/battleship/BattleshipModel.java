@@ -145,15 +145,9 @@ public class BattleshipModel {
     }
 
     public void shootAtPlayer() {
-        int max = 10;
-        int min = 1;
-        Random random = new Random();
-        int randRow = random.nextInt(max - min + 1) + min;
-        int randCol = random.nextInt(max - min + 1) + min;
 
+       gameMode.fire(); //calls the firing method specific to easy mode or hard mode
 
-        Coordinate coor = new Coordinate(randRow,randCol);
-        playerShot(coor);
     }
 
     void playerShot(Coordinate coor) {
