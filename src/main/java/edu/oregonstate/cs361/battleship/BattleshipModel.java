@@ -34,16 +34,31 @@ public class BattleshipModel {
 
 
     boolean scanResult = false;
+    boolean hardMode = false;
+
+    private Mode gameMode;
 
 
 
-    public BattleshipModel() { //battleship constructor creates dynamic arrays for it's variables
+    public BattleshipModel(boolean hardMode) { //battleship constructor creates dynamic arrays for it's variables
         playerHits = new ArrayList<>();
         playerMisses= new ArrayList<>();
         computerHits = new ArrayList<>();
         computerMisses= new ArrayList<>();
         playerSunk= new ArrayList<>();
         computerSunk= new ArrayList<>();
+
+        if(hardMode == false){ //if we are on easy construct an easy class game mode
+            gameMode = new Easy();
+        }
+
+        else{ //if we are on hard construct hard class game mode
+            gameMode = new Hard();
+        }
+
+        gameMode.placeShips(computer_aircraftCarrier, computer_battleship, computer_submarine, computer_Dinghy, computer_Clipper);
+        //place the computer's ships
+
     }
 
     /*

@@ -6,7 +6,7 @@ package edu.oregonstate.cs361.battleship;
 public class Hard extends Mode {
 
     public Hard(){
-        hardMode = true; //player is playing hard mode.
+
     }
 
 
