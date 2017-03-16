@@ -40,7 +40,7 @@ public class BattleshipModel {
             This is a parent class for easy mode and hard mode. These empty functions will be overridden
             by a function with the same name in either the easy or hard mode class.
          */
-        public void placeShips(Ship computer_aircraftCarrier, Ship computer_battleship, Ship computer_submarine,Ship computer_Dinghy,Ship computer_Clipper){
+        public void placeCompShips(){
 
 
         }
@@ -49,13 +49,21 @@ public class BattleshipModel {
         }
 
     }
-    public class Hard extends Mode{
+
+    public class Hard extends Mode {
+
+        boolean hit;
+        int count;//tracks directions checked around a hit
+        Coordinate lastHit;
+        Coordinate hitPrime;
+
 
 
         public Hard(){
 
         }
-        public void placeShips(Military computer_aircraftCarrier,  Military computer_battleship,  Military computer_submarine, Civilian computer_Dinghy,  Civilian computer_Clipper) {
+
+        public void placeCompShips() {
 
             Ship[] ships;
             ships = new Ship[5];
@@ -171,7 +179,7 @@ public class BattleshipModel {
         /*
             Easy mode hard codes the placement of the computer's ships.
          */
-        public void placeShips(Military computer_aircraftCarrier,  Military computer_battleship,  Military computer_submarine, Civilian computer_Dinghy,  Civilian computer_Clipper){
+        public void placeCompShips(){
 
             computer_aircraftCarrier.setLocation(new Coordinate(1, 0),new Coordinate(1,4));
             computer_battleship.setLocation(new Coordinate(2,0), new Coordinate(2, 3));
@@ -218,7 +226,7 @@ public class BattleshipModel {
             gameMode = new Hard();
         }
 
-        gameMode.placeShips(computer_aircraftCarrier, computer_battleship, computer_submarine, computer_Dinghy, computer_Clipper);
+        gameMode.placeCompShips();
         //place the computer's ships
 
     }
