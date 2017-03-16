@@ -5,6 +5,7 @@ import java.util.Random;
 /**
  * Created by Keana on 3/15/2017.
  */
+
 public class Hard extends Mode{
 
 
@@ -350,5 +351,8 @@ public class Hard extends Mode{
                 }
 
         }
+
+
+
 
 }
