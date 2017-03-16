@@ -164,8 +164,6 @@ for (var i = 0; i < gameModel.playerHits.length; i++) {
 
 
 function displayGameState(gameModel){
-$( '#MyBoard td'  ).css("background-color", "blue");
-$( '#TheirBoard td'  ).css("background-color", "blue");
 
 displayShip(gameModel.aircraftCarrier);
 displayShip(gameModel.battleship);
