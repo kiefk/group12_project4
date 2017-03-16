@@ -5,4 +5,12 @@ package edu.oregonstate.cs361.battleship;
  */
 public class Mode {
     //variables?
+
+    public Mode(){
+
+    }
+
+    public void placeShips(){
+
+    }
 }
