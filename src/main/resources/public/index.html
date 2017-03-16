@@ -10,9 +10,17 @@
 <script src="/js/app.js"></script>
 
 <body>
+<div class = "welcome">
+    <h1 > WELCOME TO BATTLESHIP?! </h1>
+    <p> Would you like to play in easy or hard mode? </p>
+    <button id="easyButton" type="button" onclick="easyMode()">Easy</button>
+    <button id="hardButton" type="button" onclick="hardMode()">Hard</button>
+    <BR>
+</div>
 
-<h1 class = "Placement">Place Ships</h1>
-<div class="Placement" id="AircraftcarrierDiv">
+
+<h1 class = "start hidden Placement">Place Ships</h1>
+<div class="start hidden Placement" id="AircraftcarrierDiv">
     Ship:
     <select name="shipSelec" id="shipSelec">
         <option value="aircraftCarrier">Aircraft Carrier</option>
@@ -58,7 +66,7 @@
 
 
 
-<section id="todoapp" ic-target="this">
+<section class = "start hidden" id="todoapp" ic-target="this">
     <!--#parse("/velocity/todoList.vm")-->
     <h1 class = "player">Your Board</h1>
     <div id="MyBoard" class="gameBoard player">
@@ -215,6 +223,7 @@
     <div class="Placement">
         <BR>
         <button type="button" onclick="endPlacement()">Done Placing ships</button>
+
     </div>
 
     <!-- This button should begin action stage of player turn -->
