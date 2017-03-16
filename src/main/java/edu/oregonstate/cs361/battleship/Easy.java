@@ -1,14 +1,17 @@
 package edu.oregonstate.cs361.battleship;
 
-import java.util.Random;
 
 /**
  * Created by Keana on 3/15/2017.
  */
 public class Easy extends Mode {
+    private int Row; //row to fire at
+    private int Col; //column to fire at
 
-    public Easy(){
-       //nothing to construct
+    public Easy(){ //easy mode constructor
+       Row = 1; //The first place easy mode will fire at is (1,1)
+       Col = 1; //The top left corner of the battleship grid.
+
     }
     /*
         Easy mode hard codes the placement of the computer's ships.
@@ -21,18 +24,18 @@ public class Easy extends Mode {
             computer_Dinghy.setLocation(new Coordinate(3,7), new Coordinate(5, 7));
             computer_submarine.setLocation(new Coordinate(7, 9), new Coordinate(9, 9));
 
-
-
     }
 
-    public void fire(){
-        int max = 10;
-        int min = 1;
-        Random random = new Random();
-        int randRow = random.nextInt(max - min + 1) + min;
-        int randCol = random.nextInt(max - min + 1) + min;
+    public void fire(playerShot(Coordinate coor)){
 
-        Coordinate coor = new Coordinate(randRow,randCol);
+
+        Coordinate coor = new Coordinate(Row,Col); //set Coordinate to row and column held by the Easy class
+        Row++; //increment row to fire at the next row down.
+        if(Row > 10){ //if the end of the column has been reached
+            Row = 1; //reset row to one to go to the top of the next column
+            Col++; //Col should never exceed 10 because it should reach a win condition before the program
+                        //tries to fire outside of the grid.
+        }
         playerShot(coor);
     }
 

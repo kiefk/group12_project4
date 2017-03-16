@@ -12,7 +12,7 @@ public class Mode {
 
     }
 
-    public void fire(){
+    public void fire(playerShot(Coordinate coor)){
 
     }
 
