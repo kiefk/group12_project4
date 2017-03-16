@@ -1,5 +1,7 @@
 package edu.oregonstate.cs361.battleship;
 
+import java.util.Random;
+
 /**
  * Created by Keana on 3/15/2017.
  */
@@ -24,7 +26,14 @@ public class Easy extends Mode {
     }
 
     public void fire(){
+        int max = 10;
+        int min = 1;
+        Random random = new Random();
+        int randRow = random.nextInt(max - min + 1) + min;
+        int randCol = random.nextInt(max - min + 1) + min;
 
+        Coordinate coor = new Coordinate(randRow,randCol);
+        playerShot(coor);
     }
 
 }
