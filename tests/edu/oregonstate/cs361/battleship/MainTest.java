@@ -43,7 +43,7 @@ class MainTest {
 
     @Test
     public void testPlaceShip() {
-        BattleshipModel test = new BattleshipModel();
+        BattleshipModel test = new BattleshipModel(false);
         Gson gson = new Gson();
         String model = gson.toJson(test);
 
@@ -54,7 +54,7 @@ class MainTest {
 
     @Test
     public void testScan() {
-        BattleshipModel test = new BattleshipModel();
+        BattleshipModel test = new BattleshipModel(false);
         Gson gson = new Gson();
         String model = gson.toJson(test);
 
@@ -66,7 +66,7 @@ class MainTest {
 
     @Test
     public void testValidFire(){
-        BattleshipModel test = new BattleshipModel();
+        BattleshipModel test = new BattleshipModel(false);
         Gson gson = new Gson();
         String model = gson.toJson(test);
 

@@ -18,8 +18,6 @@ button{
   border-radius:16px;
 }
 .gameBoard{
-/*with:100px;
-height:100px;*/
 background-color: light-gray;
 }
 
@@ -93,3 +91,19 @@ background-color: orange;
 .gameBoard{
     width: 900px
 }
+
+#easyButton{
+    background-color: #00b300;
+    border-color: #00b333;
+    }
+
+#hardButton{
+    background-color: #cc3300;
+    border-color: #cc3333;
+    }
+
+ .welcome {
+    color: black;
+   text-align: center;
+
+ }
