@@ -6,8 +6,10 @@ package edu.oregonstate.cs361.battleship;
 public class Easy extends Mode {
 
     public Easy(){
-       //nothing to construct
+
     }
+       //nothing to construct
+
     /*
         Easy mode hard codes the placement of the computer's ships.
      */
@@ -26,5 +28,6 @@ public class Easy extends Mode {
     public void fire(){
 
     }
+
 
 }
