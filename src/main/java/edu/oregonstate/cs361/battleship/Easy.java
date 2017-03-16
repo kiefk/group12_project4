@@ -11,7 +11,6 @@ public class Easy extends Mode {
     public Easy(){ //easy mode constructor
        Row = 1; //The first place easy mode will fire at is (1,1)
        Col = 1; //The top left corner of the battleship grid.
-
     }
     /*
         Easy mode hard codes the placement of the computer's ships.
@@ -39,5 +38,6 @@ public class Easy extends Mode {
 
         //playerShot(coor);
     }
+
 
 }

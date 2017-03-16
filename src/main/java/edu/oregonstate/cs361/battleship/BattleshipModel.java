@@ -145,7 +145,9 @@ public class BattleshipModel {
     }
 
     public void shootAtPlayer() {
+
        gameMode.fire(); //calls the firing method specific to easy mode or hard mode
+
     }
 
     void playerShot(Coordinate coor) {
