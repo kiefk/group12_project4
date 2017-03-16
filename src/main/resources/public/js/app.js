@@ -1,12 +1,38 @@
 var gameModel;
 
-$( document ).ready(function() {
-  // Handler for .ready() called.
-  $.getJSON("model", function( json ) {
-  gameModel = json;
-    console.log( "JSON Data: " + json );
-   });
-});
+function startPlacement() {
+    var x = document.getElementsByClassName("welcome");
+        var i;
+        for (i = 0; i < x.length; i++) {
+        x[i].classList.add("hidden");
+        }
+    var y = document.getElementsByClassName("start");
+            var i;
+            for (i = 0; i < y.length; i++) {
+            y[i].classList.remove("hidden");
+            }
+
+}
+
+function easyMode() {
+
+    startPlacement();
+    $.getJSON("model", function( json ) {
+      gameModel = json;
+        console.log( "JSON Data: " + json );
+       });
+
+}
+
+function hardMode() {
+
+    startPlacement();
+    $.getJSON("model", function( json ) {
+      gameModel = json;
+        console.log( "JSON Data: " + json );
+       });
+
+}
 
 function placeShip() {
    console.log($( "#shipSelec" ).val());
