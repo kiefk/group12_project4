@@ -60,6 +60,349 @@ public class BattleshipModel {
         public Hard(){
 
         }
+        public void placeShips(Military computer_aircraftCarrier,  Military computer_battleship,  Military computer_submarine, Civilian computer_Dinghy,  Civilian computer_Clipper){
+
+
+            int max = 10;
+            int min = 1;
+            Random random = new Random();
+            boolean validLocation = false;
+
+            //Aircraft Carrier
+
+            while(validLocation == false) {
+
+
+                int randDir = random.nextInt(2);
+
+                int randRow = random.nextInt(max - min + 1) + min;
+                int randCol = random.nextInt(max - min + 1) + min;
+
+                Coordinate coor = new Coordinate(randRow, randCol);
+
+                computer_aircraftCarrier.setStart(coor);
+                if (randDir == 0) {
+                    int endRow = randRow + 4;
+                    Coordinate endCoor = new Coordinate(endRow, randCol);
+                    computer_aircraftCarrier.setEnd(endCoor);
+
+                    if(endRow <= 10){
+                        validLocation = true;
+                    }
+                }else{
+                    int endCol = randCol + 4;
+                    Coordinate endCoor = new Coordinate(randRow, endCol);
+                    computer_aircraftCarrier.setEnd(endCoor);
+
+                    if(endCol <= 10){
+                        validLocation = true;
+                    }
+                }
+
+
+
+            }
+
+
+            //Battleship
+
+            validLocation = false;
+
+            while(validLocation == false) {
+
+                boolean crosses = false;
+                int randDir = random.nextInt(2);
+
+                int randRow = random.nextInt(max - min + 1) + min;
+                int randCol = random.nextInt(max - min + 1) + min;
+
+                Coordinate coor = new Coordinate(randRow, randCol);
+
+                computer_battleship.setStart(coor);
+                if (randDir == 0) {
+                    int endRow = randRow + 3;
+                    Coordinate endCoor = new Coordinate(endRow, randCol);
+                    computer_battleship.setEnd(endCoor);
+                    Coordinate curCoor = coor;
+
+                    for(int i = 0; i<4; i++) {
+                        if (computer_aircraftCarrier.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+
+                        Coordinate nextCoor = new Coordinate(curCoor.getAcross()+1, curCoor.getDown());
+                        curCoor = nextCoor;
+
+                    }
+                    if(endRow <= 10 && !crosses){
+                        validLocation = true;
+                    }
+                }else{
+                    int endCol = randCol + 3;
+                    Coordinate endCoor = new Coordinate(randRow, endCol);
+                    computer_battleship.setEnd(endCoor);
+
+                    Coordinate curCoor = coor;
+
+                    for(int i = 0; i<4; i++) {
+                        if (computer_aircraftCarrier.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+
+                        Coordinate nextCoor = new Coordinate(curCoor.getAcross(), curCoor.getDown()+1);
+                        curCoor = nextCoor;
+
+                    }
+
+                    if(endCol <= 10){
+                        validLocation = true;
+                    }
+                }
+
+
+
+            }
+
+            //Submarine
+
+            validLocation = false;
+
+            while(validLocation == false) {
+
+                boolean crosses = false;
+                int randDir = random.nextInt(2);
+
+                int randRow = random.nextInt(max - min + 1) + min;
+                int randCol = random.nextInt(max - min + 1) + min;
+
+                Coordinate coor = new Coordinate(randRow, randCol);
+
+                computer_submarine.setStart(coor);
+                if (randDir == 0) {
+                    int endRow = randRow + 2;
+                    Coordinate endCoor = new Coordinate(endRow, randCol);
+                    computer_submarine.setEnd(endCoor);
+                    Coordinate curCoor = coor;
+
+                    for(int i = 0; i<3; i++) {
+                        if (computer_aircraftCarrier.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_battleship.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+
+                        Coordinate nextCoor = new Coordinate(curCoor.getAcross()+1, curCoor.getDown());
+                        curCoor = nextCoor;
+
+                    }
+                    if(endRow <= 10 && !crosses){
+                        validLocation = true;
+                    }
+                }else{
+                    int endCol = randCol + 2;
+                    Coordinate endCoor = new Coordinate(randRow, endCol);
+                    computer_submarine.setEnd(endCoor);
+
+                    Coordinate curCoor = coor;
+
+                    for(int i = 0; i<3; i++) {
+                        if (computer_aircraftCarrier.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_battleship.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+
+                        Coordinate nextCoor = new Coordinate(curCoor.getAcross(), curCoor.getDown()+1);
+                        curCoor = nextCoor;
+
+                    }
+
+                    if(endCol <= 10){
+                        validLocation = true;
+                    }
+                }
+
+
+
+            }
+
+            //Clipper
+
+            validLocation = false;
+
+            while(validLocation == false) {
+
+                boolean crosses = false;
+                int randDir = random.nextInt(2);
+
+                int randRow = random.nextInt(max - min + 1) + min;
+                int randCol = random.nextInt(max - min + 1) + min;
+
+                Coordinate coor = new Coordinate(randRow, randCol);
+
+                computer_Clipper.setStart(coor);
+                if (randDir == 0) {
+                    int endRow = randRow + 2;
+                    Coordinate endCoor = new Coordinate(endRow, randCol);
+                    computer_Clipper.setEnd(endCoor);
+                    Coordinate curCoor = coor;
+
+                    for(int i = 0; i<3; i++) {
+                        if (computer_aircraftCarrier.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_battleship.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_submarine.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+
+                        Coordinate nextCoor = new Coordinate(curCoor.getAcross()+1, curCoor.getDown());
+                        curCoor = nextCoor;
+
+                    }
+                    if(endRow <= 10 && !crosses){
+                        validLocation = true;
+                    }
+                }else{
+                    int endCol = randCol + 2;
+                    Coordinate endCoor = new Coordinate(randRow, endCol);
+                    computer_Clipper.setEnd(endCoor);
+
+                    Coordinate curCoor = coor;
+
+                    for(int i = 0; i<3; i++) {
+                        if (computer_aircraftCarrier.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_battleship.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_submarine.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+
+                        Coordinate nextCoor = new Coordinate(curCoor.getAcross(), curCoor.getDown()+1);
+                        curCoor = nextCoor;
+
+                    }
+
+                    if(endCol <= 10){
+                        validLocation = true;
+                    }
+                }
+
+
+
+            }
+
+
+
+            //Dinghy
+
+            validLocation = false;
+
+            while(validLocation == false) {
+
+                boolean crosses = false;
+                int randDir = random.nextInt(2);
+
+                int randRow = random.nextInt(max - min + 1) + min;
+                int randCol = random.nextInt(max - min + 1) + min;
+
+                Coordinate coor = new Coordinate(randRow, randCol);
+
+                computer_Dinghy.setStart(coor);
+                if (randDir == 0) {
+                    int endRow = randRow + 2;
+                    Coordinate endCoor = new Coordinate(endRow, randCol);
+                    computer_Dinghy.setEnd(endCoor);
+                    Coordinate curCoor = coor;
+
+                    for(int i = 0; i<1; i++) {
+                        if (computer_aircraftCarrier.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_battleship.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_submarine.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_Clipper.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+
+                        Coordinate nextCoor = new Coordinate(curCoor.getAcross()+1, curCoor.getDown());
+                        curCoor = nextCoor;
+
+                    }
+                    if(endRow <= 10 && !crosses){
+                        validLocation = true;
+                    }
+                }else{
+                    int endCol = randCol + 2;
+                    Coordinate endCoor = new Coordinate(randRow, endCol);
+                    computer_Dinghy.setEnd(endCoor);
+
+                    Coordinate curCoor = coor;
+
+                    for(int i = 0; i<1; i++) {
+                        if (computer_aircraftCarrier.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_battleship.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_submarine.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+                        else if (computer_Clipper.covers(curCoor)) {
+                            crosses = true;
+                            break;
+                        }
+
+                        Coordinate nextCoor = new Coordinate(curCoor.getAcross(), curCoor.getDown()+1);
+                        curCoor = nextCoor;
+
+                    }
+
+                    if(endCol <= 10){
+                        validLocation = true;
+                    }
+                }
+
+
+
+            }
+
+        }
+
+
+
+
         private void _fire(Coordinate shot){//helper function for fire
             int result;
             result = playerShot(shot);//shoots at the player
@@ -137,9 +480,12 @@ public class BattleshipModel {
     }
 
     public class Easy extends Mode {
+        private int Row; //row to fire at
+        private int Col; //column to fire at
 
-        public Easy(){
-            //nothing to construct
+        public Easy(){ //easy mode constructor
+            Row = 1; //The first place easy mode will fire at is (1,1)
+            Col = 1; //The top left corner of the battleship grid.
         }
         /*
             Easy mode hard codes the placement of the computer's ships.
@@ -152,13 +498,22 @@ public class BattleshipModel {
             computer_Dinghy.setLocation(new Coordinate(3,7), new Coordinate(5, 7));
             computer_submarine.setLocation(new Coordinate(7, 9), new Coordinate(9, 9));
 
-
-
         }
 
         public void fire(){
 
+
+            Coordinate coor = new Coordinate(Row,Col); //set Coordinate to row and column held by the Easy class
+            Row++; //increment row to fire at the next row down.
+            if(Row > 10){ //if the end of the column has been reached
+                Row = 1; //reset row to one to go to the top of the next column
+                Col++; //Col should never exceed 10 because it should reach a win condition before the program
+                //tries to fire outside of the grid.
+            }
+
+            //playerShot(coor);
         }
+
 
     }
 
@@ -271,14 +626,9 @@ public class BattleshipModel {
     }
 
     public void shootAtPlayer() {
-        int max = 10;
-        int min = 1;
-        Random random = new Random();
-        int randRow = random.nextInt(max - min + 1) + min;
-        int randCol = random.nextInt(max - min + 1) + min;
 
-        Coordinate coor = new Coordinate(randRow,randCol);
-        playerShot(coor);
+       gameMode.fire(); //calls the firing method specific to easy mode or hard mode
+
     }
 
     int playerShot(Coordinate coor) {
