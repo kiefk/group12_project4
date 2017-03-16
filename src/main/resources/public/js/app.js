@@ -1,11 +1,14 @@
 var gameModel;
 
+
 function startPlacement() {
+    //Hide Welcome Screen
     var x = document.getElementsByClassName("welcome");
         var i;
         for (i = 0; i < x.length; i++) {
         x[i].classList.add("hidden");
         }
+    //Reveal Ship Placement Screen
     var y = document.getElementsByClassName("start");
             var i;
             for (i = 0; i < y.length; i++) {
@@ -14,24 +17,22 @@ function startPlacement() {
 
 }
 
+//Start game in easy mode
 function easyMode() {
-
     startPlacement();
-    $.getJSON("model", function( json ) {
+    $.getJSON("/easy", function( json ) {
       gameModel = json;
         console.log( "JSON Data: " + json );
        });
-
 }
 
+//Start game in hard mode
 function hardMode() {
-
     startPlacement();
-    $.getJSON("model", function( json ) {
+    $.getJSON("/hard", function( json ) {
       gameModel = json;
         console.log( "JSON Data: " + json );
        });
-
 }
 
 function placeShip() {
